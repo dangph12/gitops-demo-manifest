@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/dangph12/gitops-demo.git
     targetRevision: main
-    path: .
+    path: apps/todo
 
   destination:
     server: https://kubernetes.default.svc
