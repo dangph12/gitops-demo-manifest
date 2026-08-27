@@ -17,4 +17,6 @@ spec:
     namespace: todo-app
 
   syncPolicy:
-    automated: {}
+    automated:
+      selfHeal: true
+      prune: true
