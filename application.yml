@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/dangph12/gitops-demo.git
     targetRevision: main
-    path: kubernetes
+    path: .
 
   destination:
     server: https://kubernetes.default.svc
