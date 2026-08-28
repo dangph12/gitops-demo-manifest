@@ -10,3 +10,6 @@ resources:
 replicas:
   - name: todo-backend
     count: 5
+
+images:
+  - name: nginx:1.28
