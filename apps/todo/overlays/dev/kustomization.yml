@@ -7,6 +7,7 @@ namespace: todo-app
 resources:
   - ../../base
   - namespace.yml
+  - sealed-secret.yaml
 
 namePrefix: dev-
 
