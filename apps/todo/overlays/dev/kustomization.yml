@@ -6,6 +6,9 @@ namespace: todo-dev
 
 resources:
   - ../../base
+  - namespace.yml
+
+namePrefix: dev-
 
 replicas:
   - name: todo-backend

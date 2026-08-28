@@ -6,10 +6,10 @@ namespace: todo-production
 
 resources:
   - ../../base
+  - namespace.yml
+
+namePrefix: production-
 
 replicas:
   - name: todo-backend
-    count: 5
-
-images:
-  - name: nginx:1.28
+    count: 4

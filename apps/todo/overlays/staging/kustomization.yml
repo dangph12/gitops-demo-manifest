@@ -6,7 +6,9 @@ namespace: todo-staging
 
 resources:
   - ../../base
+  -
+namePrefix: staging-
 
 replicas:
   - name: todo-backend
-    count: 3
+    count: 2
