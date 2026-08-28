@@ -21,6 +21,17 @@ spec:
       containers:
         - name: todo-backend
           image: nginx:1.27
+          env:
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: todo-db-secret
+                  key: username
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: todo-db-secret
+                  key: password
 
           ports:
             - containerPort: 80
