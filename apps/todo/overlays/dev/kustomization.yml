@@ -9,8 +9,6 @@ resources:
   - namespace.yml
   - sealed-secret.yaml
 
-namePrefix: dev-
-
 replicas:
   - name: todo-backend
     count: 1
