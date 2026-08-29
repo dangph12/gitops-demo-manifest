@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+
+kind: AppProject
+
+metadata:
+  name: helm-project
+  namespace: argocd
+
+spec:
+  description: Project for Helm Application
+
+  sourceRepos:
+    - https://github.com/dangph12/gitops-demo
+
+  destinations:
+   - namespace: helm-app
+     server: https://kubernetes.default.svc
+
+  clusterResourceWhitelist: []

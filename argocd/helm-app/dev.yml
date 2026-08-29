@@ -3,11 +3,11 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 
 metadata:
-  name: helm-app-dev
+  name: helm-app
   namespace: argocd
 
 spec:
-  project: default
+  project: helm-project
 
   source:
     repoURL: https://github.com/dangph12/gitops-demo
@@ -20,7 +20,7 @@ spec:
 
   destination:
     server: https://kubernetes.default.svc
-    namespace: helm-app-dev
+    namespace: helm-app
 
   syncPolicy:
     automated:
