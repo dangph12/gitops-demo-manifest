@@ -7,7 +7,7 @@ metadata:
   namespace: argocd
 
 spec:
-  project: default
+  project: todo-project
 
   source:
     repoURL: https://github.com/dangph12/gitops-demo
