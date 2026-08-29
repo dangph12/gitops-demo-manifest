@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: app-backend
-          image:  ghcr.io/dangph12/app-backend:1e6c73e494bee1ad7dc6906b5d7098ad4115eab7
+          image:  ghcr.io/dangph12/app-backend:8078f45581e7b40bc3c3a54131f3bea319643708
 
           ports:
             - containerPort: 3000
