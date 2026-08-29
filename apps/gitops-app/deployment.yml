@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: app-backend
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: app-backend
+
+  template:
+    metadata:
+      labels:
+        app: app-backend
+
+    spec:
+      containers:
+        - name: app-backend
+          image:  ghcr.io/dangph12/app-backend:INITIAL_TAG
+
+          ports:
+            - containerPort: 3000
+
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+
+            limits:
+              cpu: 500m
+              memory: 512Mi
