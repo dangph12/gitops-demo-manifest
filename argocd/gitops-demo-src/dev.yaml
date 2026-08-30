@@ -9,12 +9,13 @@ metadata:
   annotations:
     argocd-image-updater.argoproj.io/image-list: todo=ghcr.io/dangph12/app-backend
 
-    argocd-image-updater.argoproj.io/todo.update-strategy: digest
+    argocd-image-updater.argoproj.io/todo.update-strategy: latest
 
     argocd-image-updater.argoproj.io/write-back-method: git
 
+    argocd-image-updater.argoproj.io/git-branch: main
 spec:
-  project: default
+  project: gitops-demo-project
 
   source:
     repoURL: https://github.com/dangph12/gitops-demo-manifest
