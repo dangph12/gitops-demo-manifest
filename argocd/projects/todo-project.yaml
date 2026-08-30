@@ -10,7 +10,7 @@ spec:
   description: Project for Todo Application
 
   sourceRepos:
-    - https://github.com/dangph12/gitops-demo
+    - https://github.com/dangph12/gitops-demo-manifest
 
   destinations:
    - namespace: todo-app

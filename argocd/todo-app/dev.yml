@@ -10,7 +10,7 @@ spec:
   project: todo-project
 
   source:
-    repoURL: https://github.com/dangph12/gitops-demo
+    repoURL: https://github.com/dangph12/gitops-demo-manifest
     targetRevision: main
     path: apps/todo/overlays/dev
 

@@ -3,17 +3,17 @@ apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 
 metadata:
-  name: gitops-app-project
+  name: gitops-demo-project
   namespace: argocd
 
 spec:
   description: Project for GitOps App Application
 
   sourceRepos:
-    - https://github.com/dangph12/gitops-demo
+    - https://github.com/dangph12/gitops-demo-manifest
 
   destinations:
-   - namespace: gitops-app
+   - namespace: gitops-demo-src
      server: https://kubernetes.default.svc
 
   clusterResourceWhitelist: []
