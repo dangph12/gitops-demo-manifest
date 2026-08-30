@@ -3,8 +3,13 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 
 metadata:
-  name: gitops-app
+  name: gitops-demo-src
   namespace: argocd
+
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: todo=ghcr.io/dangph12/app-backend
+
+    argocd-image-updater.argoproj.io/todo.update-strategy: semver
 
 spec:
   project: default
@@ -12,11 +17,11 @@ spec:
   source:
     repoURL: https://github.com/dangph12/gitops-demo-manifest
     targetRevision: main
-    path: apps/gitops-app
+    path: apps/gitops-demo-src
 
   destination:
     server: https://kubernetes.default.svc
-    namespace: gitops-app
+    namespace: gitops-demo-src
 
   syncPolicy:
     automated:
