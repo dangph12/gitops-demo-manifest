@@ -9,7 +9,9 @@ metadata:
   annotations:
     argocd-image-updater.argoproj.io/image-list: todo=ghcr.io/dangph12/app-backend
 
-    argocd-image-updater.argoproj.io/todo.update-strategy: semver
+    argocd-image-updater.argoproj.io/todo.update-strategy: digest
+
+    argocd-image-updater.argoproj.io/write-back-method: git
 
 spec:
   project: default
