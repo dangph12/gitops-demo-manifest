@@ -1,0 +1,16 @@
+apiVersion: argocd-image-updater.argoproj.io/v1alpha1
+kind: ImageUpdater
+metadata:
+  name: app-backend-updater
+  namespace: argocd
+spec:
+  writeBackConfig:
+    method: "git:secret:argocd/git-write-creds"
+  applicationRefs:
+    - namePattern: "gitops-demo-src"
+      images:
+        - alias: todo
+          imageName: ghcr.io/dangph12/app-backend
+          commonUpdateSettings:
+            updateStrategy: semver
+            pullSecret: pullsecret:argocd/ghcr-secret
