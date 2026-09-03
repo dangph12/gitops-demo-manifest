@@ -7,6 +7,31 @@ data:
   service.slack: |
     token: $slack-token
 
+  template.on-health-degraded: |
+    message: |
+      Application: {{ .app.metadata.name }} degraded
+
+    slack:
+      attachments: |
+        [{
+          "title": "{{ .app.metadata.name }}",
+          "text": "Application down",
+          "color": "danger"
+        }]
+
+  template.app-sync-failed: |
+    message: |
+      Application: {{ .app.metadata.name }} synced failed
+
+      Revision: {{ .app.status.sync.revision }}
+    slack:
+      attachments: |
+        [{
+          "title": "{{ .app.metadata.name }}",
+          "text": "Application synced failed",
+          "color": "danger"
+        }]
+
   template.app-sync-succeeded: |
     message: |
       Application {{ .app.metadata.name }} synced successfully
@@ -20,8 +45,19 @@ data:
           "color": "good"
         }]
 
+  trigger.on-sync-failed: |
+    - description: Application sync failed
+      send:
+        - app-sync-failed
+      when: app.status.operationState.phase in ['Error', 'Failed']
+  trigger.on-health-degraded: |
+    - description: Application health status is Degraded
+      send:
+        - on-health-degraded
+      when: app.status.health.status == 'Degraded'
+
   trigger.on-sync-succeeded: |
     - description: Application sync succeeded
       send:
         - app-sync-succeeded
-      when: app.status.operationState.phase == 'Succeeded'
+      when: app.status.operationState != nil and app.status.operationState.phase == 'Succeeded'
