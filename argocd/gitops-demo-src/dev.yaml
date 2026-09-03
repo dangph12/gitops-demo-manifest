@@ -8,6 +8,8 @@ metadata:
 
   annotations:
     notifications.argoproj.io/subscribe.on-sync-succeeded.slack: all-blank428
+    notifications.argoproj.io/subscribe.on-sync-failed.slack: all-blank428
+    notifications.argoproj.io/subscribe.on-health-degraded.slack: all-blank428
     argocd-image-updater.argoproj.io/image-list: todo=ghcr.io/dangph12/app-backend
     argocd-image-updater.argoproj.io/todo.update-strategy: semver
     argocd-image-updater.argoproj.io/todo.kustomize.image-name: ghcr.io/dangph12/app-backend
