@@ -7,7 +7,7 @@ metadata:
   namespace: argocd
 
   annotations:
-    notifications.argoproj.io/subscribe.on-sync-succeeded.slack: devops-alert
+    notifications.argoproj.io/subscribe.on-sync-succeeded.slack: all-blank428
     argocd-image-updater.argoproj.io/image-list: todo=ghcr.io/dangph12/app-backend
     argocd-image-updater.argoproj.io/todo.update-strategy: semver
     argocd-image-updater.argoproj.io/todo.kustomize.image-name: ghcr.io/dangph12/app-backend
